@@ -22,6 +22,7 @@ func main() {
 		panic(err)
 	}
 	fmt.Printf("%X\n", b)
+	//二进制流数据转换
 
 	var trip2 trippb.Trip
 	err = proto.Unmarshal(b, &trip2)
@@ -29,10 +30,12 @@ func main() {
 		panic(err)
 	}
 	fmt.Println(&trip2)
+	//二进制流数据解码
 
 	b, err = json.Marshal(&trip2)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Printf("%s\n", b)
+	//json数据转换
 }
